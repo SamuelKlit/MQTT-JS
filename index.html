@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MQTT-JS Transceiver">
+
+  <title>MQTT-JS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://www.hivemq.com/demos/websocket-client/js/mqttws31.js" type="text/javascript"></script>
+    <script src="logic.js"></script>
+    
+    <div class="plate">
+        <div class="headline">
+            <h1>MQTT-JS</h1>
+            <p>Simple Javascript MQTT transceiver.</p>
+        </div>
+
+        <div id="status">
+            
+        </div>
+        
+        <div class="controls">
+            <div class="settings" style="margin-bottom: 5%;">
+                <p class="inline">Broker:</p>
+                <input type="text" id="brokerIP">
+                <p class="inline">Port:</p>
+                <input type="text" id="brokerPort" size="1" >
+                <button onclick="connect()">Connect</button>
+            </div>
+
+            <div class="topics">
+                <p class="inline">Topic:</p>
+                <input type="text" id="topicTXT">
+                <button onclick="subscribe()">Subscribe</button>
+            </div>
+
+            <div class="publish">
+                <p class="inline">Message:</p>
+                <input type="text" id="messageTXT" size="16">
+                <button onclick="publish()">Publish</button>
+            </div>
+        </div>
+        
+        <p>Received messages & subscribed topics. Click to unsubscibe.</p>
+        <textarea rows="4" cols="50" class="receivedTXT"></textarea>
+        <select name="sometext" size="6" style="vertical-align: top">
+              
+        </select>
+    </div>
+</body>
+</html>

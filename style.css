@@ -1,0 +1,53 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(fonts/Montserrat/Montserrat-Light.ttf);
+}
+
+
+.receivedTXT{
+    height: 100%;
+    width: 80%;
+}
+
+body{
+    line-height: 5%;
+    font-family: sans-serif;
+    
+    background-color: indianred;
+}
+
+.controls{
+    margin: 0 auto; 
+    margin-bottom: 5%;
+    
+    width: 65%;
+    text-align: left; 
+}
+
+.plate {
+    background-color: white;
+
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 2%;
+    
+    padding-top: 1%;
+    padding-bottom: 20%;
+    
+    text-align: center; 
+    box-shadow: 0px 0px 60px 20px rgba(0,0,0,0.51);
+}
+
+.inline{
+    display: inline-block;
+}
+
+.headline{
+    margin-bottom: 5%;
+    font-size: 1vw;
+}
+
+.headline h1{
+    font-family: 'Montserrat';
+    font-size: 5vw;
+}
