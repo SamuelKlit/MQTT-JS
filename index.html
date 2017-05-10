@@ -30,7 +30,7 @@
                 <p class="inline">Broker:</p>
                 <input type="text" id="brokerIP">
                 <p class="inline">Port:</p>
-                <input type="text" id="brokerPort" size="1" >
+                <input type="text" id="brokerPort" size="1">
                 <button onclick="connect()">Connect</button>
             </div>
 
@@ -49,8 +49,7 @@
         
         <p>Received messages & subscribed topics. Click to unsubscibe.</p>
         <textarea rows="4" cols="50" class="receivedTXT"></textarea>
-        <select name="sometext" size="6" style="vertical-align: top">
-              
+        <select id="subscribedTopics" size="6" style="vertical-align: top" onchange="unsubscribe();">
         </select>
     </div>
 </body>

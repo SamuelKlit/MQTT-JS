@@ -1,5 +1,27 @@
-
 var client;
+
+click_handler = function(e) {
+    if(e.target.value == ""){
+        return;
+    }
+    
+    client.unsubscribe(e.target.value, {
+         onSuccess: unsubscribeSuccess,
+         onFailure: unsubscribeFailure,
+         invocationContext: {topic : e.target.value}
+     });
+    
+    var list = document.getElementById("subscribedTopics");
+    list.remove(e);
+}
+
+function unsubscribeSuccess(context){
+    status('Successfully unsubscribed');
+}
+
+function unsubscribeFailure(context){
+    status('Failed to  unsubscribe');
+}
 
 function status(message){
     var para = document.createElement("p");
@@ -20,6 +42,8 @@ function removeStatus(node){
 }
 
 function connect(){
+    $('#subscribedTopics').click(click_handler);
+
     console.log("connect()");
     status("Starting connection");
     
@@ -54,12 +78,16 @@ function connect(){
     };
 
     client.connect(options);
+    
 }
 
 function subscribe(){
     console.log("subscribe()");
-    client.subscribe(document.getElementById("topicTXT").value, {qos: 2}); 
+    client.subscribe($('#topicTXT').val(), {qos: 2}); 
     status("Subscribed");
+    
+    var list = document.getElementById("subscribedTopics");
+    list.add(new Option($('#topicTXT').val(), $('#topicTXT').val()));
 }
 
 function publish(){
