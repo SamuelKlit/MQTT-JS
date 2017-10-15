@@ -20,7 +20,7 @@ function unsubscribeSuccess(context){
 }
 
 function unsubscribeFailure(context){
-    status('Failed to  unsubscribe');
+    status('Failed to unsubscribe');
 }
 
 function status(message){
